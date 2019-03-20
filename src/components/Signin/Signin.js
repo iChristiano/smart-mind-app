@@ -5,7 +5,7 @@ class Signin extends React.Component {
         super(props);
         this.state = {
             signInEmail: '',
-            signInPassword: ''
+            signInPassword: '',
         };
     }
 
@@ -18,7 +18,7 @@ class Signin extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch('http://localhost:3000/signin', {
+        fetch(this.props.url+'/signin', {
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({

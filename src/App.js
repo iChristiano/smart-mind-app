@@ -24,6 +24,8 @@ const particlesOptions = {
 
 const defaultImage = 'https://www.thesun.co.uk/wp-content/uploads/2016/04/1807626.main_image.jpg?strip=all&w=620&h=413&crop=1';
 
+const url ='https://frozen-depths-91991.herokuapp.com'
+
 const initalState = {
   input: defaultImage,
   imageUrl: '',
@@ -92,7 +94,7 @@ class App extends Component {
   onPictureSubmit = () => {
     this.setState({imageUrl: this.state.input});
 
-    fetch('http://localhost:3000/imageurl',{ 
+    fetch(url+'/imageurl',{ 
       method:'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -102,7 +104,7 @@ class App extends Component {
     .then(response => response.json())
     .then((response) => {
       if (response) {
-        fetch('http://localhost:3000/image',{ 
+        fetch(url+'/image',{ 
           method:'put',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify({
@@ -156,11 +158,13 @@ class App extends Component {
               <Signin 
                 onRouteChange={this.onRouteChange}
                 loadUser={this.loadUser}
+                url={url}
               />
               :
               <Register 
                 onRouteChange={this.onRouteChange} 
                 loadUser={this.loadUser}
+                url={url}
               />
             )
         }
