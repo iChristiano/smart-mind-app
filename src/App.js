@@ -13,7 +13,7 @@ import './App.css';
 const particlesOptions = {
         particles: {
           numbers: {
-            value: 45
+            value: 60
           },
           density: {
             enable: true,
@@ -22,7 +22,7 @@ const particlesOptions = {
         }
       };
 
-const defaultImage = 'https://ichef.bbci.co.uk/news/976/cpsprodpb/0378/production/_117388800_050321presidentsposter-1.jpg';
+const defaultImage = 'https://img.waz.de/img/incoming/crop231702901/588780267-w1200-cv4_3-q85/Shutterstock-Creative-7.jpg';
 
 const url ='http://localhost:3000'; //'https://limitless-lake-68008.herokuapp.com'
 
